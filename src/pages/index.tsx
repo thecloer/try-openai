@@ -71,14 +71,14 @@ export default function Home() {
             </button>
           </form>
         </section>
-        <section className='py-8'>
-          <div className='h-96 flex items-center justify-center'>
+        <section className='md:py-8'>
+          <div className='h-96 flex items-center justify-center p-4'>
             {isLoading ? (
               <Spinner />
             ) : error === null ? (
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full h-full'>
                 {imageUrls.map((url, i) => (
-                  <div key={i} className='relative'>
+                  <div key={i} className='relative aspect-square'>
                     <Image src={url} alt={promptRef.current?.value ?? 'Generated Image'} fill />
                   </div>
                 ))}
